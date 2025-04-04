@@ -1,0 +1,136 @@
+{
+    "common": {
+        "confirm": "확인",
+        "cancel": "취소",
+        "close": "닫기",
+        "choose": "선택",
+        "logout": "로그아웃",
+        "connect": "접속",
+        "save": "저장",
+        "delete": "삭제",
+        "backward": "뒤로가기",
+        "dateFormat": "yyyy-MM-dd",
+        "dateFormatDot": "yyyy.MM.dd",
+        "dateFormatMonth": "yyyy년 MM월",
+        "sunday": "일",
+        "monday": "월",
+        "tuesday": "화",
+        "wednesday": "수",
+        "thursday": "목",
+        "friday": "금",
+        "saturday": "토"
+    },
+    "QIS002": {
+        "title": "앱 접근 권한 안내",
+        "description": "앱 사용을 위해\n카메라 접근 권한이 필요합니다.",
+        "cameraRequired": "카메라(필수)",
+        "cameraDescription": "외관 검사 결과 작성 시 이미지 업로드를 위해 해당 기능 접근이 필요합니다.",
+        "permissionChangeMethod": "접근 권한 변경 방법",
+        "permissionChangeMethodDescription": "설정 > 서연이화 초중품관리 앱 > 권한 ON/OFF",
+        "permissionMessage": "카메라 권한을 허용하지 않으면\n앱을 사용할 수 없습니다."
+    },
+    "QIS003": {
+        "hqCompany": "(주)서연이화",
+        "hqComment": "서연이화 자체 시스템을 통해\n품목 관리 기능을 이용할 수 있습니다.",
+        "partner": "협력사",
+        "partnerComment": "협력사 전용 시스템을 통해\n품목 관리 기능을 이용할 수 있습니다."
+    },
+    "QIS004": {
+        "title": "OEM 초/중품 외관 관리",
+        "id": "아이디",
+        "password": "비밀번호",
+        "login": "로그인"
+    },
+    "QIS005": {
+        "title": "협력사 초/중품 외관 관리",
+        "id": "아이디",
+        "password": "비밀번호",
+        "login": "로그인"
+    },
+    "QIS006": {
+        "title": "OEM 초/중품 외관 관리",
+        "userInfo": "사용자정보",
+        "businessType": "사업장 구분",
+        "writingDate": "작성일자",
+        "workType": "근무형태",
+        "carType": "차종 선택",
+        "ulsan": "울산",
+        "asan": "아산",
+        "day": "주간",
+        "night": "야간"
+    },
+    "QIS007": {
+        "title": "협력사 초/중품 외관 관리",
+        "partnerName": "협력사명",
+        "businessType": "사업장 구분",
+        "writingDate": "작성일자",
+        "workType": "근무형태",
+        "ulsan": "울산",
+        "asan": "아산",
+        "day": "주간",
+        "night": "야간"
+    },
+    "QIS008": {
+        "title": "OEM 초/중품 외관 검사 결과 등록",
+        "day": "주간",
+        "night": "야간",
+        "ulsan": "울산",
+        "asan": "아산",
+        "factory": "공장",
+        "initial": "초품",
+        "middle": "중품",
+        "unit": "장"
+    },
+    "QIS009": {
+        "title": "협력사 초/중품 외관 검사 결과 등록",
+        "day": "주간",
+        "night": "야간",
+        "ulsan": "울산",
+        "asan": "아산",
+        "factory": "공장",
+        "initial": "초품",
+        "middle": "중품",
+        "unit": "장"
+    },
+    "QIS010": {
+        "inspectionLabel": "(필수) 검사기준서 확인",
+        "saveInspectionResult": "외관 검사결과 등록",
+        "writingDate": "작성일자",
+        "charger": "관리자",
+        "weekInitial": "주간 초품",
+        "weekMiddle": "주간 중품",
+        "nightInitial": "야간 초품",
+        "nightMiddle": "야간 중품",
+        "picture": "사진",
+        "configLotNo": "LOT NO 설정",
+        "checkProblem": "이상유무",
+        "actionResult": "조치결과",
+        "actionResultHint": "조치결과를 50자 이내로 입력해주세요.",
+        "problemYes": "유",
+        "problemNo": "무"
+    },
+    "QIS011": {
+        "inspectionLabel": "(필수) 검사기준서 확인",
+        "saveInspectionResult": "외관 검사결과 등록",
+        "writingDate": "작성일자",
+        "charger": "관리자",
+        "weekInitial": "주간 초품",
+        "weekMiddle": "주간 중품",
+        "nightInitial": "야간 초품",
+        "nightMiddle": "야간 중품",
+        "picture": "사진",
+        "configLotNo": "LOT NO 설정",
+        "checkProblem": "이상유무",
+        "actionResult": "조치결과",
+        "actionResultHint": "조치결과를 50자 이내로 입력해주세요.",
+        "problemYes": "유",
+        "problemNo": "무"
+    },
+    "QIS012": {
+        "title": "검사기준서",
+        "description": "검사기준서를 확인하였으며\n위 내용에 따라 검사하겠습니다."
+    },
+    "httpError": {
+        "networkError": "네트워크 오류입니다.\n네트워크 상태를 확인해주세요."
+    }
+}

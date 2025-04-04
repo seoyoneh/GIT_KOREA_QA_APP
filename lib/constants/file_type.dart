@@ -1,0 +1,4 @@
+enum InspectionFileType {
+  PDF,
+  IMAGE;
+}

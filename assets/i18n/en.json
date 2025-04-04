@@ -1,0 +1,127 @@
+{
+    "common": {
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "close": "Close",
+        "choose": "Select",
+        "logout": "Logout",
+        "connect": "Connect",
+        "save": "Save",
+        "dateFormat": "yyyy-MM-dd",
+        "dateFormatDot": "MM.dd.yyyy",
+        "dateFormatMonth": "yyyy MM",
+        "sunday": "Su",
+        "monday": "M",
+        "tuesday": "T",
+        "wednesday": "W",
+        "thursday": "T",
+        "friday": "F",
+        "saturday": "Sa"
+    },
+    "QIS002": {
+        "title": "App Access Permission Notice",
+        "description": "Camera access permission is required\nto use the app.",
+        "cameraRequired": "Camera (Required)",
+        "cameraDescription": "Access to this feature is required to upload images when creating exterior inspection results.",
+        "permissionChangeMethod": "How to Change Permissions",
+        "permissionChangeMethodDescription": "Settings > Seoyon E-Hwa OEM/Partner Inspection App > Permissions ON/OFF",
+        "permissionMessage": "The app cannot be used\nwithout allowing camera permission."
+    },
+    "QIS003": {
+        "hqCompany": "Seoyon E-Hwa Co., Ltd.",
+        "hqComment": "You can use the item management features through Seoyon E-Hwa’s internal system.",
+        "partner": "Partner Company",
+        "partnerComment": "You can use the item management features through the partner-exclusive system."
+    },
+    "QIS004": {
+        "title": "OEM Exterior Inspection Management",
+        "id": "ID",
+        "password": "Password",
+        "login": "Login"
+    },
+    "QIS005": {
+        "title": "Partner Exterior Inspection Management",
+        "id": "ID",
+        "password": "Password",
+        "login": "Login"
+    },
+    "QIS006": {
+        "title": "OEM Exterior Inspection Management",
+        "userInfo": "User Information",
+        "businessType": "Business Type",
+        "writingDate": "Date Created",
+        "workType": "Work Type",
+        "carType": "Select Vehicle Type",
+        "ulsan": "Ulsan",
+        "asan": "Asan",
+        "day": "Day Shift",
+        "night": "Night Shift"
+    },
+    "QIS007": {
+        "title": "Partner Exterior Inspection Management",
+        "partnerName": "Partner Name",
+        "businessType": "Business Type",
+        "writingDate": "Date Created",
+        "workType": "Work Type",
+        "ulsan": "Ulsan",
+        "asan": "Asan",
+        "day": "Day Shift",
+        "night": "Night Shift"
+    },
+    "QIS008": {
+        "title": "OEM Exterior Inspection Result Registration",
+        "day": "Day Shift",
+        "night": "Night Shift",
+        "ulsan": "Ulsan",
+        "asan": "Asan",
+        "factory": "Factory",
+        "initial": "Initial Product",
+        "middle": "Middle Product",
+        "unit": "Units"
+    },
+    "QIS009": {
+        "title": "Partner Exterior Inspection Result Registration",
+        "day": "Day Shift",
+        "night": "Night Shift",
+        "ulsan": "Ulsan",
+        "asan": "Asan",
+        "factory": "Factory",
+        "initial": "Initial Product",
+        "middle": "Middle Product",
+        "unit": "Units"
+    },
+    "QIS010": {
+        "inspectionLabel": "(Required) Inspection Standard Confirmation",
+        "saveInspectionResult": "Register Exterior Inspection Result",
+        "writingDate": "Date Created",
+        "charger": "Manager",
+        "weekInitial": "Day Initial Product",
+        "weekMiddle": "Day Middle Product",
+        "nightInitial": "Night Initial Product",
+        "nightMiddle": "Night Middle Product",
+        "picture": "Photo",
+        "configLotNo": "Set LOT NO",
+        "checkProblem": "Check for Issues",
+        "actionResult": "Action Result",
+        "actionResultHint": "Please enter the action result within 50 characters.",
+        "problemYes": "Yes",
+        "problemNo": "No"
+    },
+    "QIS011": {
+        "inspectionLabel": "(Required) Inspection Standard Confirmation",
+        "saveInspectionResult": "Register Exterior Inspection Result",
+        "writingDate": "Date Created",
+        "charger": "Manager",
+        "weekInitial": "Day Initial Product",
+        "weekMiddle": "Day Middle Product",
+        "nightInitial": "Night Initial Product",
+        "nightMiddle": "Night Middle Product",
+        "picture": "Photo",
+        "configLotNo": "Set LOT NO",
+        "checkProblem": "Check for Issues",
+        "actionResult": "Action Result",
+        "actionResultHint": "Please enter the action result within 50 characters.",
+        "problemYes": "Yes",
+        "problemNo": "No"
+    }
+}

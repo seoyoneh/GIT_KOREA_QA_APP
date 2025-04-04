@@ -1,0 +1,2 @@
+/Users/jonghojuhn/Projects/2025/seoyon/product_management/01_Code/product_manager/android/app/.cxx/Debug/3g6g3j3f/x86_64/CMakeFiles/edit_cache.dir
+/Users/jonghojuhn/Projects/2025/seoyon/product_management/01_Code/product_manager/android/app/.cxx/Debug/3g6g3j3f/x86_64/CMakeFiles/rebuild_cache.dir
