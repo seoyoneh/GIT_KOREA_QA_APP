@@ -1,16 +1,81 @@
-# product_manager
+# 초중품관리 앱 개발 문서
+**(주의) 모바일 앱 특성상 버전 업데이트가 빈번합니다. SDK 업데이트, 패키지 업데이트를 게을리하면 앱 스토어에서 블록 당할 수 있으므로 매주 어플리케이션 버전을 체크하는 것을 잊지마세요.**  
+## 1. 어플리케이션 개요
+- Language : Dart
+- Platform : Flutter(3.29.2)
+- Java : 21.0.5
+- Gradle : 8.4
 
-A new Flutter project.
+## 2. SDK
+- [Flutter](https://docs.flutter.dev/release/archive)
+- [JDK](https://www.oracle.com/kr/java/technologies/downloads/#java21)
+- [Gradle](https://services.gradle.org/distributions/gradle-8.4-all.zip)
 
-## Getting Started
+## 3. IDE Tool
+- [Android Studio](https://developer.android.com/studio?hl=ko)
+- [XCode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
+- [Visual Studio Code](https://code.visualstudio.com/download)
 
-This project is a starting point for a Flutter application.
+## 4. 개발환경 세팅
+⚡️이번 챕터는 위에 2, 3번에 기술한 SDK, IDE툴을 모두 다운로드 완료했다는 것을 전제로 합니다.  
+⚡️이번 챕터는 GIT_KOREA_QA_APP 의 development 브랜치 소스를 로컬환경에 다운로드 했다는 것을 전제로 합니다.  
+⚡️iOS 앱도 함께 개발해야하므로 사용하는 운영체제는 MacOS로 고정합니다.
 
-A few resources to get you started if this is your first Flutter project:
+### 4.1. 환경변수 설정
+위에서 다운로드 한 각 SDK 압축파일을 적당한 곳에 압축을 해제한다.  
+ex) ~/development/sdk/flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+앞으로의 설명은 최신 MacOS는 Zshell(zsh)을 사용하므로 zsh기준으로 설명한다.  
+```bash
+$ vi ~/.zshrc
+```
+터미널에서 위의 명령을 실행하여 vi 에디터를 실행한다.(vi에디터 사용방법은 [https://blockdmask.tistory.com/25](https://blockdmask.tistory.com/25)에서 확인한다.)  
+.zshrc 파일 제일 하단에 아래의 내용을 추가한다.
+```sh
+export DEV_SDK="$HOME/development/sdk"
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#JDK
+export JAVA_HOME="$DEV_SDK/jdk/jdk-21.0.5.jdk/Contents/Home"
+export PATH="JAVA_HOME/bin:$PATH"
+
+# Flutter SDK Path
+export FLUTTER_HOME="$DEV_SDK/flutter"
+export PATH="$PATH:$FLUTTER_HOME/bin"
+```
+위 내용을 작성하고 저장한 뒤 vi 에디터를 종료한 뒤 아래의 명령어를 실행한다.
+```bash
+$ source ~/.zshrc
+```
+```bash
+$ flutter --version
+Flutter 3.29.2 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision c236373904 (3 weeks ago) • 2025-03-13 16:17:06 -0400
+Engine • revision 18b71d647a
+Tools • Dart 3.7.2 • DevTools 2.42.3
+```
+이렇게 flutter 버전이 나오면 정상적으로 Flutter 환경변수가 설정되었다고 보면 된다.  
+P.S) java -version 을 실행하면 JDK의 버전을 확인할 수 있다.
+
+
+### 4.2. 가상머신(Simulator) 생성
+#### Android Simulator
+Android Studio에서 비어있는 아무 Flutter 프로젝트를 생성한다.  
+생성된 프로젝트의 메뉴 중 Tools > Device Manager를 선택하면 Device Manager 사이드 창이 활성화 된다. '+' 버튼을 누르고 'Create Virtual Device' 메뉴를 선택하면 가상 디바이스를 생성할 수 있다.
+
+#### iOS Simulator
+터미널에서 아래의 명령어를 입력한다.
+```bash
+$ open -a simulator
+```
+아이폰 시뮬레이터가 실행되지 않을 경우 XCode가 정상적으로 설치되었고 실행되는지 확인한다.
+
+### 4.3. 앱 실행
+본 자료는 Visual Studio Code를 사용하여 테스트 하는 것을 기본으로 한다.  
+Visual Studio Code를 실행하고 Cmd + p 를 입력한 뒤 '>show extensions'라고 입력하면 확장 툴 브라우저가 나오는데 여기서 'Flutter' 확장팩을 설치한다.
+
+확장팩이 설치 된 후에 다시 Cmd + P를 입력한 뒤에 '>Flutter Run Flutter Doctor'를 입력하면 Flutter Doctor라는 프로그램이 실행되는 데 이때 맨 마지막에 "No issues found!' 라는 메시지가 나와야하며 문제가 있다면 출력된 가이드에 따라 문제를 해결한다.  
+
+*(P.S: 출력된 가이드가 굉장히 상세하게 나오므로 가이드에 따라 조치하면 왠만한 문제는 해결할 수 있다. 이 가이드 문서에서 누락된 부분도 해결할 수 있도록 가이드 해준다.)*
+
+모든 문제를 해결했다면 다시 Cmd + P를 입력하고 '>flutter: Launch Emulator'라고 입력하면 앞서 생성한 Simulator 목록이 나오게 된다.  
+원하는 환경을 선택하면 Simulator가 실행된다. 그리고 F5키를 입력하면 코드가 컴파일 되고 앱이 실행된다.
