@@ -51,5 +51,7 @@
 		<string>The application requires a camera to take pictures of the product for external inspection.</string>
 		<key>NSPhotoLibraryUsageDescription</key>
 		<string>The application should be able to select a photo to inspect its appearance.</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>Camera use for product inspection requires microphone access permission.</string>
 	</dict>
 </plist>

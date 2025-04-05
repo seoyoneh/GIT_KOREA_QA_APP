@@ -13,27 +13,39 @@ class CameraView extends StatefulWidget {
   State<CameraView> createState() => _CameraViewState();
 }
 
-class _CameraViewState extends State<CameraView> {
+class _CameraViewState extends State<CameraView> with SingleTickerProviderStateMixin {
   //-------------------------------------
   // VARIABLE
   //-------------------------------------
   late List<CameraDescription> _cameras;
+  late AnimationController _flashController;
+
   CameraController? _controller;
-  Future<void>? _initializeControllerFuture;
   String? _errorMessage;
+  bool _isFlashVisible = false;
 
   //-------------------------------------
   // OVERRIDE
   //-------------------------------------
   @override
   void initState() {
+    _flashController = AnimationController(
+      duration: const Duration(milliseconds: 100),
+      vsync: this,
+    );
+    
     super.initState();
-    _initializeCamera();
+    
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _initializeCamera();
+    });
   }
 
   @override
   void dispose() {
     _controller?.dispose();
+    _flashController.dispose();
+
     super.dispose();
   }
 
@@ -71,6 +83,18 @@ class _CameraViewState extends State<CameraView> {
                         ],
                       ),
                     ),
+                    _isFlashVisible
+                    ? Positioned.fill(
+                      child: AnimatedBuilder(
+                        animation: _flashController,
+                        builder: (context, child) {
+                          return Opacity(
+                            opacity: 1 - _flashController.value,
+                            child: Container(color: QisColors.white.color),
+                          );
+                        },
+                      ),
+                    ) : Container()
                   ],
                 ),
           Positioned(
@@ -109,8 +133,7 @@ class _CameraViewState extends State<CameraView> {
       );
 
       // 컨트롤러를 초기화합니다.
-      _initializeControllerFuture = _controller!.initialize();
-      await _initializeControllerFuture;
+      await _controller!.initialize();
 
       // 상태를 갱신하여 UI를 다시 빌드합니다.
       setState(() {});
@@ -126,7 +149,7 @@ class _CameraViewState extends State<CameraView> {
       if (_controller == null || !_controller!.value.isInitialized) {
         return;
       }
-      
+      _triggerFlashEffect(); // 번쩍 효과 실행
       final XFile image = await _controller!.takePicture();
       if(mounted) {
         GoRouter.of(context).pop(image); // 사진 촬영 후 경로 반환
@@ -137,5 +160,19 @@ class _CameraViewState extends State<CameraView> {
         _errorMessage = '사진 촬영 오류';
       });
     }
+  }
+
+  void _triggerFlashEffect() {
+    setState(() {
+      _isFlashVisible = true;
+
+      _flashController.forward().then((_) {
+        _flashController.reverse().then((_) {
+          setState(() {
+            _isFlashVisible = false;
+          });
+        });
+      });
+    });
   }
 }

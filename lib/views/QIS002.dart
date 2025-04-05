@@ -189,7 +189,8 @@ class _QIS002State extends State<QIS002> {
   Future<Map<Permission, PermissionStatus>> _checkPermissions() async {
     Map<Permission, PermissionStatus> permissions = await [
       Permission.photos,
-      Permission.camera
+      Permission.camera,
+      Permission.microphone
     ].request();
 
     return permissions;
@@ -201,9 +202,11 @@ class _QIS002State extends State<QIS002> {
 
     PermissionStatus photosStatus = permissions[Permission.photos]!;
     PermissionStatus cameraStatus = permissions[Permission.camera]!;
+    PermissionStatus microphoneStatus = permissions[Permission.microphone]!;
 
     if(photosStatus.isPermanentlyDenied ||
-       cameraStatus.isPermanentlyDenied
+       cameraStatus.isPermanentlyDenied ||
+       microphoneStatus.isPermanentlyDenied
     ) {
       openAppSettings();
     } else {

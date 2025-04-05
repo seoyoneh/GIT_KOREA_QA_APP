@@ -658,12 +658,12 @@ class _QIS011State extends ConsumerState<QIS011> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              "이미지 상세",
+              "QIS011.imageDetail",
               style: PretendardStyle.bold.copyWith(
                 fontSize: 16,
                 color: QisColors.gray900.color
               ),
-            ),
+            ).tr(),
             const SizedBox(height: 10),
             Flexible(
               flex: 1,
@@ -671,12 +671,12 @@ class _QIS011State extends ConsumerState<QIS011> {
               child: Container(
                 width: 296,
                 decoration: BoxDecoration(
-
+                  color: QisColors.black.color,
                 ),
                 clipBehavior: Clip.antiAlias,
                 child: Image.file(
                   File(file.path),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 ),
               )
             ),

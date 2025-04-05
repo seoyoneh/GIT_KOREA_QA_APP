@@ -22,8 +22,9 @@ class _LandingPageState extends ConsumerState<LandingPage> {
       // #2. 권한을 취득한다.
       bool cameraGranted = await Permission.camera.isGranted; // 카메라 권한
       bool photoGranted = await Permission.photos.isGranted; // 갤러리 권한
+      bool micGranted = await Permission.microphone.isGranted; // 마이크 권한
 
-      if((!cameraGranted || !photoGranted) && mounted) {
+      if((!cameraGranted || !photoGranted || !micGranted) && mounted) {
         GoRouter.of(context).go(RoutePath.QIS002.path);
         return;
       }

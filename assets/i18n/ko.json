@@ -107,7 +107,8 @@
         "actionResult": "조치결과",
         "actionResultHint": "조치결과를 50자 이내로 입력해주세요.",
         "problemYes": "유",
-        "problemNo": "무"
+        "problemNo": "무",
+        "imageDetail": "이미지 상세"
     },
     "QIS011": {
         "inspectionLabel": "(필수) 검사기준서 확인",
@@ -124,7 +125,8 @@
         "actionResult": "조치결과",
         "actionResultHint": "조치결과를 50자 이내로 입력해주세요.",
         "problemYes": "유",
-        "problemNo": "무"
+        "problemNo": "무",
+        "imageDetail": "이미지 상세"
     },
     "QIS012": {
         "title": "검사기준서",
