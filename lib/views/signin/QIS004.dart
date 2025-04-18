@@ -10,6 +10,7 @@ import 'package:product_manager/components/layout/scaffold.dart';
 import 'package:product_manager/constants/assets.dart';
 import 'package:product_manager/constants/colors.dart';
 import 'package:product_manager/constants/font_style.dart';
+import 'package:product_manager/core/application_data.dart';
 import 'package:product_manager/core/provider/login_notifier.dart';
 import 'package:product_manager/models/login/token_type.dart';
 import 'package:product_manager/services/login/login_service.dart';
@@ -162,10 +163,13 @@ class _QIS004State extends ConsumerState<QIS004> {
     JWTTokenType? token = await service.login(
       context: context,
       username: username,
-      password: password
+      password: password,
+      langSet: "KO"
     );
 
     if(token != null) {
+      ApplicationData.getInstance().userToken = token;
+      
       if(mounted) {
         ref.read(loginProvider.notifier).login(); // 로그인
       }

@@ -161,7 +161,8 @@ class _QIS005State extends ConsumerState<QIS005> {
     JWTTokenType? token = await service.login(
       context: context,
       username: username,
-      password: password
+      password: password,
+      langSet: "KO"
     );
 
     if(token != null) {

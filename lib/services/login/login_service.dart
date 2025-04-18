@@ -23,11 +23,13 @@ class LoginService {
   Future<JWTTokenType?> login ({
     required BuildContext context,
     required String username,
-    required String password
+    required String password,
+    required String langSet
   }) async{
     Map<String, String> params = {
       'username': username,
-      'password': password
+      'password': password,
+      'langSet': langSet
     };
 
     dynamic response = await HttpRequest.request(context, urlType: RequestUrl.LOGIN, params: params);
